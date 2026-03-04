@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAUET Smart Library Access System</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for 3 Dot Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="login-page">
+
+    <!-- 3 Dot Menu -->
+    <div class="top-menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+
+    <div class="login-box">
+
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h1>Welcome to</h1>
+            <h2>BAUET Smart Library Access System</h2>
+            <p>Official Digital Library Access Platform of BAUET</p>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+
+            <div class="icon">👤</div>
+
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Show Password
+                    </label>
+                </div>
+
+                <button type="button" 
+                    onclick="window.location.href='dashboard.html'" 
+                    class="login-btn">
+                    Login
+                </button>
+
+                <button type="reset" class="clear-btn">
+                    Clear
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

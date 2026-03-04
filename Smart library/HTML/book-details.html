@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Book Detail | BAUET Smart Library</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="header">
+    Book Detail
+    <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+        <div class="menu-content" id="menu">
+            <a href="profile.html">Profile</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="book-search.html">Book Search</a>
+        <a href="issue-return.html">Issue / Return</a>
+        <a href="reservation.html">My Reservations</a>
+        <a href="notifications.html">Notifications</a>
+        <a href="complaints.html">Complaints</a>
+    </div>
+
+    <div class="content">
+        <h2>Book Details</h2>
+        <table>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Database Systems</td>
+                <td>ABC</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>Operating Systems</td>
+                <td>XYZ</td>
+                <td>Issued</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+window.onclick = function(e) {
+    if (!e.target.matches('.menu-btn')) {
+        var menu = document.getElementById("menu");
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        }
+    }
+}
+</script>
+
+</body>
+</html
