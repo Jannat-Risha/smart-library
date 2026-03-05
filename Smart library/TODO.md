@@ -14,7 +14,7 @@
 [-] Form validation improvement  
 [-] Real-time dashboard data update  
 
-[ ] Setup Node.js + Express server  
+[x] Setup Node.js + Express server  
 [ ] Connect backend with MongoDB  
 [ ] Create MongoDB database & collections  
 [ ] Design MongoDB schema models  
