@@ -1,21 +1,21 @@
-[x] Login Page UI Design  
-[x] Dashboard Layout Design  
-[x] Book Search Page UI  
-[x] Issue & Return Page UI  
-[x] My Reservations Page UI  
-[x] Notifications Page UI  
-[x] Complaints Page UI  
-[x] Sidebar Navigation  
-[x] Common CSS Styling  
-[x] Basic Responsive Layout  
+[x] Login Page UI Design (@Jannat) 
+[x] Dashboard Layout Design  (@Jannat)
+[x] Book Search Page UI  (@Arpita)
+[x] Issue & Return Page UI  (@Liza) 
+[x] My Reservations Page UI  (@Tithi)
+[x] Notifications Page UI (@Jannat) 
+[x] Complaints Page UI  (@Arpita) 
+[x] Sidebar Navigation (@Liza)  
+[x] Common CSS Styling   (@Tithi)
+[x] Basic Responsive Layout  (@Liza @Tithi @Arpita)
 
 [-] Delay fine notification logic (UI done, backend not connected)  
 [-] Dynamic book search (Currently static data)  
 [-] Form validation improvement  
 [-] Real-time dashboard data update  
 
-[x] Setup Node.js + Express server  
-[ ] Connect backend with MongoDB  
+[x] Setup Node.js + Express server (@Jannat)  
+[x] Connect backend with MongoDB (@Liza @Tithi @Arpita) 
 [ ] Create MongoDB database & collections  
 [ ] Design MongoDB schema models  
 [ ] User registration system  
