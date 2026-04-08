@@ -16,7 +16,7 @@
 
 [x] Setup Node.js + Express server (@Jannat)  
 [x] Connect backend with MongoDB (@Liza @Tithi @Arpita) 
-[ ] Create MongoDB database & collections  
+[x] Create MongoDB database & collections  
 [ ] Design MongoDB schema models  
 [ ] User registration system  
 [ ] User login authentication (JWT)  
