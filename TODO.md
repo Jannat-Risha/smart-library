@@ -17,12 +17,12 @@
 [x] Setup Node.js + Express server (@Jannat)  
 [x] Connect backend with MongoDB (@Liza @Tithi @Arpita) 
 [x] Create MongoDB database & collections  
-[ ] Design MongoDB schema models  
-[ ] User registration system  
-[ ] User login authentication (JWT)  
+[x] Design MongoDB schema models  (@Jannat)  
+[-] User registration system (liza will handle this) 
+[x] User login authentication (JWT) (@Jannat)   
 [ ] Password hashing using bcrypt  
 [ ] Role-based access control (Admin / Librarian / Student)  
-[ ] Store issued book records in MongoDB  
+[ ] Store issued book records in MongoDB  (tithi will handle this)
 [ ] Store reservation records in MongoDB  
 [ ] Store complaints in MongoDB  
 [ ] Automatic delay fine calculation system  
@@ -30,7 +30,7 @@
 [ ] Notification system from database  
 [ ] Update book availability after issue/return  
 [ ] Return book backend logic  
-[ ] Admin dashboard backend logic  
+[ ] Admin dashboard backend logic(Arpita will handle this)   
 [ ] Librarian dashboard backend logic  
 [ ] Route protection using middleware  
 [ ] Input validation & error handling  
