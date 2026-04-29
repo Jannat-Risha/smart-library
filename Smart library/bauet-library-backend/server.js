@@ -6,6 +6,14 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+/* =======================
+   CONFIG
+======================= */
+const JWT_SECRET = "secret123";
+
+/* =======================
+   MIDDLEWARE
+======================= */
 app.use(express.json());
 app.use(cors());
 
@@ -33,11 +41,10 @@ const User = mongoose.model("User", userSchema);
 /* =======================
    REGISTER API
 ======================= */
-app.post("/register", async (req, res) => {
+app.post("/api/register", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    // check existing user
     const existingUser = await User.findOne({ username });
 
     if (existingUser) {
@@ -47,7 +54,6 @@ app.post("/register", async (req, res) => {
       });
     }
 
-    // hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = new User({
@@ -73,14 +79,14 @@ app.post("/register", async (req, res) => {
 /* =======================
    LOGIN API
 ======================= */
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
     const user = await User.findOne({ username });
 
     if (!user) {
-      return res.status(404).json({
+      return res.json({
         success: false,
         message: "User not found"
       });
@@ -89,20 +95,20 @@ app.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      return res.status(401).json({
+      return res.json({
         success: false,
         message: "Wrong password"
       });
     }
 
-    // create token
+    // JWT token create
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      "secret123",
+      JWT_SECRET,
       { expiresIn: "1d" }
     );
 
-    res.status(200).json({
+    res.json({
       success: true,
       message: "Login Successful",
       token,
@@ -114,7 +120,7 @@ app.post("/login", async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).json({
+    res.json({
       success: false,
       message: "Login Error"
     });
@@ -122,33 +128,33 @@ app.post("/login", async (req, res) => {
 });
 
 /* =======================
-   TOKEN VERIFY MIDDLEWARE
+   TOKEN VERIFY
 ======================= */
 function verifyToken(req, res, next) {
-  const token = req.headers["authorization"];
+  const authHeader = req.headers["authorization"];
 
-  if (!token) {
-    return res.status(403).json({
-      message: "No token provided"
-    });
+  if (!authHeader) {
+    return res.json({ success: false, message: "No token provided" });
   }
 
+  // Bearer token split
+  const token = authHeader.split(" ")[1];
+
   try {
-    const decoded = jwt.verify(token, "secret123");
+    const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded;
     next();
   } catch (err) {
-    return res.status(401).json({
-      message: "Invalid token"
-    });
+    return res.json({ success: false, message: "Invalid token" });
   }
 }
 
 /* =======================
    PROTECTED ROUTE
 ======================= */
-app.get("/dashboard", verifyToken, (req, res) => {
+app.get("/api/dashboard", verifyToken, (req, res) => {
   res.json({
+    success: true,
     message: "Dashboard Accessed",
     user: req.user
   });
@@ -158,5 +164,5 @@ app.get("/dashboard", verifyToken, (req, res) => {
    SERVER
 ======================= */
 app.listen(5000, () => {
-  console.log("Server running on port 5000");
+  console.log("Server running on http://localhost:5000");
 });
